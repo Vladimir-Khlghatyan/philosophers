@@ -11,17 +11,20 @@ NAME			= philo_bonus
 
 all:			${NAME}
 
+.c.o:
+				@$(CC) $(CFLAGS) -o $@ -c $<
+
 $(NAME):		$(OBJS)
-				${CC}  ${CFLAGS} -o ${NAME} ${OBJS}
-				@echo -e "$(GREEN)$(NAME) created!$(DEFAULT)"
+				@${CC}  ${CFLAGS} -o ${NAME} ${OBJS}
+				@echo "$(GREEN)$(NAME) created!$(DEFAULT)"
 
 clean:
-				${RM} ${OBJS}
-				@echo -e "$(YELLOW)object files deleted!$(DEFAULT)"
+				@${RM} ${OBJS}
+				@echo "$(YELLOW)object files deleted!$(DEFAULT)"
 
 fclean:			clean
-				${RM} ${NAME}
-				@echo -e "$(RED)all deleted!$(DEFAULT)"
+				@${RM} ${NAME}
+				@echo "$(RED)all deleted!$(DEFAULT)"
 
 re:				fclean all
 
