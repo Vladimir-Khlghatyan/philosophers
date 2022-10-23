@@ -21,6 +21,8 @@
 # include <sys/time.h>
 # include <errno.h>
 # include <signal.h>
+# include <fcntl.h>
+# include <sys/stat.h>
 
 # define RED        "\33[1;31m"
 # define GREEN      "\33[1;32m"
